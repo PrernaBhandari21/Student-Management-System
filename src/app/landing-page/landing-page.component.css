@@ -1,0 +1,74 @@
+.mainContainer{
+    height: 100vh;
+    /* background-color: pink; */
+    background: url("../../assets/images/gradient-bg.jpg") no-repeat;
+    background-size: cover;
+}
+
+#carouselExampleCaptions{
+    width: 58%;
+    height: 342px;
+}
+
+img{
+    width: 500px;
+    height: 342px;
+}
+
+.container{
+    padding-top: 40px;
+    /* background-color: aqua; */
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.carouselExampleCaptions{
+    width: 40%;
+}
+
+.text{
+    width: 35%;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.examContainer{
+    display: flex;
+    flex-direction: column;
+    padding-top: 40px;
+    background: #001a3e;
+    margin: 0;
+    margin-top: 42px;
+    padding-bottom: 20px;
+}
+
+.examContainer h3{
+    font-weight: 500;
+    font-size: 26px;
+    color: white;
+}
+
+.examBox{
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.examBox h4{
+    color: white;
+}
+
+.examBox img{
+    width: 200px;
+    height: 150px;
+}
+
+.examBox:hover{
+    background-color: rgb(162, 133, 2);
+    cursor: pointer;
+}

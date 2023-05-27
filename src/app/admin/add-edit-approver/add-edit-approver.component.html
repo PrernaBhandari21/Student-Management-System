@@ -1,0 +1,32 @@
+<h1>Add/Edit Approver Details</h1>
+<form [formGroup]="editForm" (ngSubmit)="save()">
+  <mat-form-field appearance="outline">
+    <mat-label>Name of Approver</mat-label>
+    <input matInput formControlName="name" placeholder="Enter name" />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Designation</mat-label>
+    <input matInput formControlName="designation" placeholder="Enter designation" />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Email</mat-label>
+    <input matInput formControlName="email" placeholder="Enter email" />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Password</mat-label>
+    <input matInput formControlName="password" type="password" placeholder="Enter password" />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Confirm Password</mat-label>
+    <input matInput formControlName="confirmPassword" type="password" placeholder="Confirm password" />
+  </mat-form-field>
+
+  <div class="button-container">
+    <button class="btn btn-success me-3" type="submit" [disabled]="!editForm.valid">Save</button>
+    <button class="btn btn-light" type="button" (click)="cancel()">Cancel</button>
+  </div>
+</form>

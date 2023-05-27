@@ -1,0 +1,38 @@
+mat-form-field{
+    width: 100%;
+}
+
+.mainContainer{
+    display: flex;
+    width: 100%;
+    background-color: white;
+    place-items: center;
+}
+
+.bgImg{
+    width: 60%;
+}
+
+.form{
+    width: 40%;
+    margin-left: -100px;
+}
+
+.bgImg img{
+    width: 80%;
+}
+
+
+form{
+    padding: 25px;
+}
+
+h4 a{
+    text-decoration: underline;
+    color: blue;
+}
+
+h4 a:hover{
+    text-decoration: underline;
+    color: blue;
+}

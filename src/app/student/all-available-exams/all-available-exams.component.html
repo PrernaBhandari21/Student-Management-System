@@ -1,0 +1,28 @@
+<h3 style="margin-left: 20px; margin-bottom: 0; margin-top: 25px;">Available Exams...</h3>
+
+<div class="container" *ngIf="exams">
+
+
+    <mat-card class="example-card" *ngFor="let exam of exams">
+
+        <!-- <img mat-card-image src="../../../assets/images/apply-exam.jpg" alt="Photo"> -->
+        <img src="https://cdn.pixabay.com/photo/2017/10/29/12/08/clipboard-2899586_1280.png" style="width: 100%;" alt="img">
+        <h4 style="text-align: center;">{{ exam.examName }}</h4>
+        <mat-card-content>
+          <div class="col-flex">
+            <div class="row-flex">
+                <span>Start Date :</span>
+                <span>{{ exam.startDate }}</span>
+            </div>
+            <div class="row-flex">
+                <span>End Date :</span>
+                <span>{{ exam.endDate }}</span>
+            </div>
+            <button mat-raised-button color="primary" (click)="applyNow(exam.examName)">Apply Now</button>
+          </div>
+        </mat-card-content>
+
+      </mat-card>
+
+  </div>
+  

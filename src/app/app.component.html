@@ -1,0 +1,17 @@
+
+
+<ng-container >
+  <mat-sidenav-container class="example-container">
+    <mat-sidenav *ngIf="shouldShowSideMenu()" #sidenav mode="side" opened="true" class="example-sidenav">
+      <app-sidemenu></app-sidemenu>
+    </mat-sidenav>
+  
+    <mat-sidenav-content perfectScrollbar>
+      <app-header style="position: fixed;top: 0;left: 0;right: 0;z-index: 1;"></app-header>
+      <div style="height: 98%; padding-top: 58px;">
+        <router-outlet></router-outlet>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  
+</ng-container>

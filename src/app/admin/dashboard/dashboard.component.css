@@ -1,0 +1,35 @@
+.container{
+    
+    height: 100%;
+    margin-top: 10px;
+    overflow: auto;
+}
+
+.container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("../../../assets/images/examBg.jpg");
+    /* border-image: url("https://cdn.pixabay.com/photo/2021/06/20/09/22/exam-6350373_1280.jpg"); */
+    background-size: cover;
+    filter: blur(2px) grayscale(100%);
+    z-index: -1;
+  }
+
+.buttons{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.buttons button{
+    width: 350px;
+    height: 200px;
+    font-size: 30px;
+}

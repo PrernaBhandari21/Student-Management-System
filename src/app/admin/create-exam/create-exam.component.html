@@ -1,0 +1,45 @@
+
+
+<div class="mainContainer">
+  <h3>Create New Exam</h3>
+  <form>
+        <mat-form-field>
+          <mat-label>Exam Name</mat-label>
+          <input matInput placeholder="Enter Exam Name" name="examName" [(ngModel)]="examName">
+        </mat-form-field>
+        
+  
+      <mat-form-field>
+        <mat-label>Enrollment Start Date</mat-label>
+        <input matInput [matDatepicker]="startDatePicker" name="startDate" [(ngModel)]="startDate">
+        <mat-datepicker-toggle matSuffix [for]="startDatePicker"></mat-datepicker-toggle>
+        <mat-datepicker #startDatePicker></mat-datepicker>
+      </mat-form-field>
+    
+      <mat-form-field>
+        <mat-label>Enrollment End Date</mat-label>
+        <input matInput [matDatepicker]="endDatePicker" name="endDate" [(ngModel)]="endDate">
+        <mat-datepicker-toggle matSuffix [for]="endDatePicker"></mat-datepicker-toggle>
+        <mat-datepicker #endDatePicker></mat-datepicker>
+      </mat-form-field>
+    
+      <div>
+        <label for="eligibilityCriteria" class="mb-2">Eligibility Criteria (Upload PDF)</label>
+        <input type="file" id="eligibilityCriteria" (change)="handleFileInput($event)" name="eligibilityCriteria">
+      </div>
+    
+      <mat-form-field>
+        <mat-label>Other Details</mat-label>
+        <textarea matInput rows="5" name="otherDetails" [(ngModel)]="otherDetails"></textarea>
+      </mat-form-field>
+    
+      <button mat-raised-button color="primary" (click)="submitForm()">Publish</button>
+      <button mat-raised-button color="primary" (click)="resetForm()">Reset</button>
+      <button mat-raised-button color="primary" (click)="cancelForm()">Cancel</button>
+
+    </form>
+</div>
+
+
+  
+  <!-- <button (click)="openPDF()" [disabled]="!pdfBase64">Open PDF</button> -->

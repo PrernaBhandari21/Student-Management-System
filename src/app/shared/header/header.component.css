@@ -1,0 +1,20 @@
+.links{
+    text-align: right;
+    width: 100%;    
+}
+
+.links a{
+    margin-left: 10px;
+    margin-right: 10px;
+    color: white;
+}
+
+mat-toolbar{
+background-color: darkblue;
+}
+
+.logo-heading{
+    color: yellow;
+    font-weight: 500;
+    font-size: 22px;
+}

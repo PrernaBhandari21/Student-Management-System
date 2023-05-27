@@ -1,0 +1,31 @@
+.mat-form-field {
+    width: 100%;
+    padding-top: 10px;
+}
+
+input{
+    width: 70%;
+    padding-top: 10px;
+    padding-left: 20px;
+}
+
+form{
+border: 1px dotted lightblue;
+border-radius: 5px ;
+padding: 30px;
+}
+
+.mainContainer{
+    margin: 20px;
+    padding: 20px;
+}
+
+
+h3{
+    font-weight: 500;
+    font-size: 25px;
+}
+
+button{
+    margin: 10px;
+}
