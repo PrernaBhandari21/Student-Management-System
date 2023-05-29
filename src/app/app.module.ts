@@ -41,6 +41,8 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import { ReportsDashboardComponent } from './admin/reports-dashboard/reports-dashboard.component';
 import { SelectReportComponent } from './admin/select-report/select-report.component';
 import { StudentPersonalReportComponent } from './admin/student-personal-report/student-personal-report.component';
+import { FillFormComponent } from './student/fill-form/fill-form.component';
+import { PreviewFormComponent } from './student/preview-form/preview-form.component';
 
 @NgModule({
   declarations: [
@@ -64,7 +66,9 @@ import { StudentPersonalReportComponent } from './admin/student-personal-report/
     HeaderDialogComponent,
     ReportsDashboardComponent,
     SelectReportComponent,
-    StudentPersonalReportComponent
+    StudentPersonalReportComponent,
+    FillFormComponent,
+    PreviewFormComponent,
   ],
   imports: [
     BrowserModule,

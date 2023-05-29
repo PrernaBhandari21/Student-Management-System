@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DialogServiceService } from '../dialog-service.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sidemenu',
@@ -20,7 +22,8 @@ export class SidemenuComponent implements OnInit {
     collapseOnSelect: true,
   };
 	storedUser: any;
-  constructor() { }
+  constructor(private dialogService : DialogServiceService,
+	private router : Router) { }
 
   ngOnInit(): void {
 
@@ -64,12 +67,6 @@ export class SidemenuComponent implements OnInit {
 				link:"reports-dashboard",
 				icon:"assignment"
 			},
-
-			
-
-
-
-
 			{
 				label:"Logout",
 				link:"/landing-page",
@@ -94,8 +91,11 @@ export class SidemenuComponent implements OnInit {
 			,
 			{
 				label:"Logout",
-				link:"/landing-page",
-				icon:"person"
+				// link:"/landing-page",
+				icon:"person",
+				onSelected: () => {
+					this.openLogoutModal();
+				  } 
 			}
 
 			
@@ -103,6 +103,21 @@ export class SidemenuComponent implements OnInit {
 	}
 
 
+  }
+
+
+  openLogoutModal(){
+	this.dialogService.openConfirmationDialog('Are you sure you want to Logout?').subscribe(result => {
+		if (result) {
+		  console.log("reset");
+		  localStorage.clear();
+		  this.router.navigate(["landing-page"])
+  
+		} else {
+		  console.log("reset");
+  
+		}
+	  });
   }
 
 }

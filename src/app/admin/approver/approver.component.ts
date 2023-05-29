@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {MatTableDataSource} from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog';
 import { AddEditApproverComponent } from '../add-edit-approver/add-edit-approver.component';
+import { HttpClient } from '@angular/common/http';
 
 
 @Component({
@@ -13,29 +14,34 @@ import { AddEditApproverComponent } from '../add-edit-approver/add-edit-approver
 
 export class ApproverComponent implements OnInit {
 
-  constructor(private dialog : MatDialog) { }
+  constructor(private dialog : MatDialog,
+    private http : HttpClient) { }
 
-  ELEMENT_DATA: any[] = [
-    {ApproverName: 'Riya', userId: 'pri@gmail.com',  phoneNo:8178298372, registeredDate:"2023-05-01"},
-    {ApproverName: 'Jaanvi', userId: 'pri@gmail.com',  phoneNo:8178298372, registeredDate:"2023-05-01"},
-    {ApproverName: 'Priyanshi', userId: 'pri@gmail.com',  phoneNo:8178298372, registeredDate:"2023-05-01"},
-    {ApproverName: 'Priyanshi', userId: 'pri@gmail.com',  phoneNo:8178298372, registeredDate:"2023-05-01"},
-    {ApproverName: 'Priyanshi', userId: 'pri@gmail.com',  phoneNo:8178298372, registeredDate:"2023-05-01"},
-    {ApproverName: 'Priyanshi', userId: 'pri@gmail.com',  phoneNo:8178298372, registeredDate:"2023-05-01"},
-    {ApproverName: 'Priyanshi', userId: 'pri@gmail.com',  phoneNo:8178298372, registeredDate:"2023-05-01"},
-    {ApproverName: 'Tushita', userId: 'pri@gmail.com',  phoneNo:8178298372, registeredDate:"2023-05-01"},
-    {ApproverName: 'Priyanshi', userId: 'pri@gmail.com',  phoneNo:8178298372, registeredDate:"2023-05-01"},
-    {ApproverName: 'Priyanshi', userId: 'pri@gmail.com',  phoneNo:8178298372, registeredDate:"2023-05-01"},
-    {ApproverName: 'Priyanshi', userId: 'pri@gmail.com',  phoneNo:8178298372, registeredDate:"2023-05-01"},
-    {ApproverName: 'Priyanshi', userId: 'pri@gmail.com',  phoneNo:8178298372, registeredDate:"2023-05-01"},
-  
-  ];
+  ELEMENT_DATA: any[] =[]
 
   ngOnInit(): void {
+    this.fetchApprovers();
   }
 
+  fetchApprovers(): void {
+    this.http.get<any[]>('http://localhost:4200/approvers').subscribe(
+      (data:any) => {
+        
+        // this.ELEMENT_DATA = data;
+        const approversList= data["approvers"]
+        this.ELEMENT_DATA = approversList;
 
-  displayedColumns: string[] = ['sno', 'approvername', 'userid','phoneNo','registeredDate','edit'];
+        console.log("this.ELEMENT_DATA",this.ELEMENT_DATA);
+        this.dataSource.data = this.ELEMENT_DATA;
+      },
+      error => {
+        // Handle error response here
+        console.error(error);
+      }
+    );
+  }
+
+displayedColumns: string[] = ['sno', 'name', 'designation', 'email', 'edit'];
   dataSource = new MatTableDataSource(this.ELEMENT_DATA);
 
   applyFilter(event: Event) {

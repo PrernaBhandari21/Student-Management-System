@@ -105,9 +105,17 @@ app.post('/auth', async (req, res) => {
     console.log("Inserting data into table:", data);
 
     // Insert the data into the "authDB" table
-    const insertQuery = 'INSERT INTO "authDB" (name, email,password,role) VALUES ($1, $2, $3, $4)';
+    let insertQuery;
+    let insertValues;
+    
+    if (data.designation) {
+      insertQuery = 'INSERT INTO "authDB" (name, email, password, role, designation) VALUES ($1, $2, $3, $4, $5)';
+      insertValues = [data.name, data.email, data.password, data.role, data.designation];
+    } else {
+      insertQuery = 'INSERT INTO "authDB" (name, email, password, role) VALUES ($1, $2, $3, $4)';
+      insertValues = [data.name, data.email, data.password, data.role];
+    }
   
-    const insertValues = [data.name, data.email, data.password, data.role];
     const result = await client.query(insertQuery, insertValues);
 
     console.log("Data saved to the database:", data);
@@ -126,6 +134,7 @@ app.post('/auth', async (req, res) => {
     }
   }
 });
+
 
 
 
@@ -156,7 +165,6 @@ app.get('/auth', async (req, res) => {
 });
 
 
-
 app.delete('/auth',async(req,res)=>{
   try{
 // Delete all items from the "auth" table
@@ -172,6 +180,21 @@ console.error("Error deleting data from the database:", err);
 res.status(500).json({ message: 'Error deleting data from the database', error: err });
 }
 })
+
+app.get('/approvers', async (req, res) => {
+  try {
+    const query = 'SELECT name, email, role, designation FROM "authDB" WHERE role = $1';
+    const result = await client.query(query, ['approver']);
+    const approvers = result.rows;
+
+    res.json({ approvers });
+    console.log("approvers =>", approvers);
+  } catch (error) {
+    console.error('Error retrieving approvers:', error);
+    res.status(500).json({ message: 'Error retrieving approvers', error });
+  }
+});
+
 
 
 //api for sending student registration form !

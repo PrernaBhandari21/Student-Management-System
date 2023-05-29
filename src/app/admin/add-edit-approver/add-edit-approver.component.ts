@@ -1,6 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import * as CryptoJS from 'crypto-js';
 
 @Component({
   selector: 'app-add-edit-approver',
@@ -35,8 +36,9 @@ export class AddEditApproverComponent implements OnInit {
 // Function to save the form data and close the dialog
 save() {
   if (this.editForm.valid) {
-    const { name, email, password, role } = this.editForm.value;
-    const postData = { name, email, password, role };
+    const { name, email, role , designation} = this.editForm.value;
+    const password = this.hashPassword(this.editForm.value.password);
+    const postData = { name, email, password, role ,designation};
     console.log(postData);
 
 
@@ -64,6 +66,12 @@ save() {
       });
 
   }
+}
+
+
+hashPassword(password: string): string {
+  const hashedPassword = CryptoJS.SHA512(password).toString();
+  return hashedPassword;
 }
 
   // Function to close the dialog without saving

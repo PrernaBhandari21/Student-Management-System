@@ -1,0 +1,15 @@
+<div class="container">
+    <h3>Preview</h3>
+    <p><strong>Name:</strong> {{ formData.name }}</p>
+    <p><strong>Email:</strong> {{ formData.email }}</p>
+    <p><strong>Father's Name:</strong> {{ formData.fatherName }}</p>
+    <p><strong>Mother's Name:</strong> {{ formData.motherName }}</p>
+    <p><strong>Address:</strong> {{ formData.address }}</p>
+    <p><strong>Post Applied For:</strong> {{ formData.postAppliedFor }}</p>
+    <p><strong>Gender:</strong> {{ formData.gender }}</p>
+    <p><strong>Date of Birth:</strong> {{ formData.dob | date }}</p>
+    <p><strong>10th Certificate:</strong> {{ formData.attachments['10thCertificate'].name }}</p>
+    <p><strong>12th Certificate:</strong> {{ formData.attachments['12thCertificate'].name }}</p>
+    <p><strong>OBC/SC/ST Certificate:</strong> {{ formData.attachments.categoryCertificate.name }}</p>
+  </div>
+  

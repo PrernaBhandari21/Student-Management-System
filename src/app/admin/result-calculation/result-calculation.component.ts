@@ -20,12 +20,12 @@ export class ResultCalculationComponent implements OnInit {
 
   reportData: any; // variable to store the retrieved data
 
-  // omr_response = require("../../shared/json-data/omr_response.json");
-  // answer_key = require("../../shared/json-data/answer_key.json");
-  // students_all_data = require("../../shared/json-data/students-data.json");
-  omr_response:any;
-  answer_key:any;
-  students_all_data:any;
+  omr_response = require("../../shared/json-data/omr_response.json");
+  answer_key = require("../../shared/json-data/answer_key.json");
+  students_all_data = require("../../shared/json-data/students-data.json");
+  // omr_response:any;
+  // answer_key:any;
+  // students_all_data:any;
   results: any[] = [];
   tableResultant: any;
   tableHeaders: string[] = [];
@@ -57,7 +57,7 @@ export class ResultCalculationComponent implements OnInit {
     private nameService : NameService) { }
 
   async ngOnInit() {
-    await this.getReportData();
+    // await this.getReportData();
     console.log("omr_response ", this.omr_response);
     console.log("answer_key", this.answer_key);
     console.log("students_data", this.students_data);
@@ -245,6 +245,7 @@ export class ResultCalculationComponent implements OnInit {
       let total_right_count = 0;
       let total_wrong_count = 0;
       let total_blank_count = 0;
+      let overallTotalMarks = 0;
 
     
 
@@ -258,9 +259,12 @@ export class ResultCalculationComponent implements OnInit {
         let question = "Q" + (j + 1);
         let answer = this.omr_response[i][question];
         let correct_answer = this.answer_key[j].AnswerKey;
-        let full_marks = this.answer_key[j].FullMarks;
+        let full_marks = this.answer_key[j].FullMarks; // right marks !!
         let partial_marks = this.answer_key[j]["Partial Marks"];
         let negative_marks = this.answer_key[j]["Negative Marks"];
+
+        const totalQuestions = this.answer_key.length;
+        overallTotalMarks = totalQuestions * full_marks;
 
         let subject = this.answer_key[j].Subject;
 
@@ -360,6 +364,8 @@ export class ResultCalculationComponent implements OnInit {
       obj['Total Right Marks'] = total_right_marks;
       obj['Total Wrong Marks'] = total_wrong_marks;
       obj['Total Marks'] = total_marks;
+      obj['Overall Total Marks'] = overallTotalMarks;
+
 
       //Putting total count of right, wrong, and blank
       obj['Total Right Count'] = total_right_count;
