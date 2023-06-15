@@ -21,3 +21,9 @@ form{
     padding-left: 60px;
     padding-right: 60px;
 }
+
+.form-container{
+    background-color: white;
+    padding: 20px;
+    margin: 20px;
+}

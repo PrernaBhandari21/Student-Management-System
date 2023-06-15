@@ -1,0 +1,47 @@
+.heading {
+    font-size: 24px;
+    font-weight: 500;
+    margin: 20px;
+  }
+  
+  .heading span {
+    font-style: italic;
+  }
+  
+  mat-form-field,
+  mat-radio-group,
+  input,
+  mat-radio-button {
+    width: 100%;
+    margin-top: 10px;
+  }
+  
+  mat-radio-group .mat-radio-button {
+    width: auto; /* Adjust the width as needed */
+  }
+  
+  form {
+    padding: 30px;
+    margin: 40px;
+    border: 1px dotted lightgray;
+    border-radius: 10px;
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+  
+  .form-container {
+    background-color: white;
+    padding: 20px;
+    margin: 20px;
+  }
+  
+  mat-radio-group {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  mat-radio-button {
+    width: auto;
+    margin-top: 10px;
+  }
+  

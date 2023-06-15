@@ -16,10 +16,6 @@
   margin-bottom: 5px;
 }
 
-.step-header li.active {
-  /* Add your active style here */
-}
-
 .step-header li span.step-circle {
   display: inline-block;
   width: 30px;
@@ -33,18 +29,21 @@
 }
 
 .step-circle {
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background-color: #ccc;
-    text-align: center;
-    line-height: 20px;
-    margin-right: 5px;
-    color: white;
-  }
-  
-  .step-header li.active .step-circle {
-    background-color: green;
-  }
-  
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #ccc;
+  text-align: center;
+  line-height: 20px;
+  margin-right: 5px;
+  color: white;
+}
+
+.step-header li.active .step-circle {
+  background-color: blue;
+}
+
+.step-header li.completed .step-circle {
+  background-color: green;
+}

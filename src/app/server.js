@@ -38,9 +38,9 @@ client.on('end', () => {
       console.log("Inserting data into table:", data);
   
       // Insert the data into the "exam" table
-      const insertQuery = 'INSERT INTO "exam" ("startDate", "endDate", "eligibilityCriteriaFile", "otherDetails","examName") VALUES ($1, $2, $3, $4 , $5)';
+      const insertQuery = 'INSERT INTO "exam" ("startDate", "endDate", "eligibilityCriteriaFile", "otherDetails","examName","registrationFormat","examId") VALUES ($1, $2, $3, $4 , $5, $6 , $7)';
     
-      const insertValues = [data.startDate, data.endDate, data.eligibilityCriteriaFile, data.otherDetails,data.examName];
+      const insertValues = [data.startDate, data.endDate, data.eligibilityCriteriaFile, data.otherDetails,data.examName,data.format,data.examId];
       const result = await client.query(insertQuery, insertValues);
   
       console.log("Data saved to the database:", data);

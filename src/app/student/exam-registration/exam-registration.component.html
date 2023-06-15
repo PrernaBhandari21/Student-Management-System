@@ -1,9 +1,9 @@
 <div style="padding: 20px;">
   <ul class="step-header">
-    <li [class.active]="currentStep === 1" (click)="selectStep(1)">
+    <li [class.completed]="currentStep > 1" (click)="selectStep(1)">
       <span class="step-circle">1</span> Fill Form
     </li>
-    <li [class.active]="currentStep === 2" (click)="selectStep(2)">
+    <li [class.active]="currentStep === 2" [class.completed]="currentStep > 2" (click)="selectStep(2)">
       <span class="step-circle">2</span> Preview
     </li>
     <li [class.active]="currentStep === 3" (click)="selectStep(3)">
@@ -13,9 +13,15 @@
   
   
   
+  
   <div class="step-content">
     <div *ngIf="currentStep === 1">
-      <app-fill-form [examName]="examName" (submitted)="selectStep(2)"></app-fill-form>
+      <div *ngIf="examFormat == 'Format1'">
+        <app-fill-form [examName]="examName" (submitted)="selectStep(2)"></app-fill-form>
+      </div>
+      <!-- <div *ngIf="examFormat == 'Format2'"> -->
+        <app-fill-format2 [examName]="examName" (submitted)="selectStep(2)"></app-fill-format2>
+      <!-- </div> -->
     </div>
   
   

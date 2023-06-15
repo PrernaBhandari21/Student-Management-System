@@ -43,6 +43,7 @@ import { SelectReportComponent } from './admin/select-report/select-report.compo
 import { StudentPersonalReportComponent } from './admin/student-personal-report/student-personal-report.component';
 import { FillFormComponent } from './student/fill-form/fill-form.component';
 import { PreviewFormComponent } from './student/preview-form/preview-form.component';
+import { FillFormat2Component } from './student/fill-format2/fill-format2.component';
 
 @NgModule({
   declarations: [
@@ -69,6 +70,7 @@ import { PreviewFormComponent } from './student/preview-form/preview-form.compon
     StudentPersonalReportComponent,
     FillFormComponent,
     PreviewFormComponent,
+    FillFormat2Component,
   ],
   imports: [
     BrowserModule,

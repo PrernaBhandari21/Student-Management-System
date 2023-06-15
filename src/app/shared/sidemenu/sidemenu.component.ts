@@ -82,7 +82,8 @@ export class SidemenuComponent implements OnInit {
 			  label: "Available Exams",
 			  link: "/all-available-exams",
 			  icon: "pets"
-			},			
+			}
+			,			
 			{
 				label: "Register For Exams",
 				link: '/student-registration-form',

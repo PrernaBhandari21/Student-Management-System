@@ -23,11 +23,18 @@
         <mat-datepicker #endDatePicker></mat-datepicker>
       </mat-form-field>
     
-      <div>
+      <div style="margin-bottom: 10px;">
         <label for="eligibilityCriteria" class="mb-2">Eligibility Criteria (Upload PDF)</label>
         <input type="file" id="eligibilityCriteria" (change)="handleFileInput($event)" name="eligibilityCriteria">
       </div>
     
+     
+      <mat-radio-group name="format" [(ngModel)]="format" style="margin-top: 5px;">
+        <label>Select Format : </label>
+        <mat-radio-button value="Format1">Format1</mat-radio-button>
+        <mat-radio-button value="Format2">Format2</mat-radio-button>
+      </mat-radio-group>
+
       <mat-form-field>
         <mat-label>Other Details</mat-label>
         <textarea matInput rows="5" name="otherDetails" [(ngModel)]="otherDetails"></textarea>

@@ -11,6 +11,8 @@ import { Router } from '@angular/router';
 })
 export class AllAvailableExamsComponent implements OnInit {
   exams: any[] = [];
+  storedUser: any;
+  applyForExam : boolean = false;
 
   constructor(
     private http : HttpClient,
@@ -18,8 +20,26 @@ export class AllAvailableExamsComponent implements OnInit {
     private router : Router
   ) { }
 
-  ngOnInit(): void {
+  async ngOnInit() {
+    await this.getRole();
     this.getExams();
+
+  }
+
+  getRole(){
+    const storedUserString = localStorage.getItem('user');
+	if (storedUserString) {
+	  this.storedUser = JSON.parse(storedUserString);
+	  console.log('Stored User Info:', this.storedUser);
+	} else {
+	  console.log('User information not found in localStorage');
+	}
+
+  if(this.storedUser.role == "student"){
+    this.applyForExam = true;
+  }else{
+    this.applyForExam = false;
+  }
   }
 
   getExams(): void {
@@ -41,8 +61,14 @@ export class AllAvailableExamsComponent implements OnInit {
   }
   
 
-  applyNow(examName: string) {
-    this.router.navigate(['/student-registration-form'], { queryParams: { examName: examName } });
+  applyNow(exam: any) {
+
+    console.log("exam: ", exam);
+    console.log("exam.examId ===========> ",exam.examId);
+    
+    this.router.navigate(['/student-registration-form'], { queryParams: { examName: exam.examName,
+       examFormat : exam.registrationFormat ,
+        examId : exam.examId } });
   }
   
 }

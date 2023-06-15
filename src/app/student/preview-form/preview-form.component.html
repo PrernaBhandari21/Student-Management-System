@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
     <h3>Preview</h3>
     <p><strong>Name:</strong> {{ formData.name }}</p>
     <p><strong>Email:</strong> {{ formData.email }}</p>
@@ -11,5 +11,71 @@
     <p><strong>10th Certificate:</strong> {{ formData.attachments['10thCertificate'].name }}</p>
     <p><strong>12th Certificate:</strong> {{ formData.attachments['12thCertificate'].name }}</p>
     <p><strong>OBC/SC/ST Certificate:</strong> {{ formData.attachments.categoryCertificate.name }}</p>
-  </div>
+  </div> -->
+
+  <mat-card>
+    <mat-card-content>
+        <div class="flex-row">
+            <span><strong>Exam Name</strong></span>
+            <span>{{ formData.examName }}</span>
+        </div>
+
+        <div class="flex-row">
+            <span><strong>Name</strong></span>
+            <span>{{ formData.name }}</span>
+        </div>
+
+        <div class="flex-row">
+            <span><strong>Email:</strong></span>
+            <span>{{ formData.email }}</span>
+        </div>
+
+        <div class="flex-row">
+            <span><strong>Father's Name:</strong></span>
+            <span>{{ formData.fatherName }}</span>
+        </div>
+
+        <div class="flex-row">
+            <span><strong>Mother's Name:</strong> </span>
+            <span>{{ formData.motherName }}</span>
+        </div>
+
+        <div class="flex-row">
+            <span><strong>Address:</strong></span>
+            <span>{{ formData.address }}</span>
+        </div>
+
+        <div class="flex-row">
+            <span><strong>Post Applied For:</strong> </span>
+            <span>{{ formData.postAppliedFor }}</span>
+        </div>
+
+        <div class="flex-row">
+            <span><strong>Gender:</strong> </span>
+            <span>{{ formData.gender }}</span>
+
+        </div>
+
+        <div class="flex-row">
+            <strong>Date of Birth:</strong>
+            <span>{{ formData.dob | date }}</span>
+        </div>
+
+        <div class="flex-row">
+            <strong>10th Certificate:</strong>
+            <span>{{ formData.attachments['10thCertificate'].name }}</span>
+        </div>
+
+        <div class="flex-row">
+            <strong>12th Certificate:</strong>
+            <span>{{ formData.attachments['12thCertificate'].name }}</span>
+        </div>
+
+        <div class="flex-row">
+            <strong>OBC/SC/ST Certificate:</strong>
+            <span>{{ formData.attachments.categoryCertificate.name }}</span>
+        </div>
+
+    </mat-card-content>
+  </mat-card>
   

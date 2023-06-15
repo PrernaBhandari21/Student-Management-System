@@ -18,7 +18,7 @@
                 <span>End Date :</span>
                 <span>{{ exam.endDate }}</span>
             </div>
-            <button mat-raised-button color="primary" (click)="applyNow(exam.examName)">Apply Now</button>
+            <button *ngIf="applyForExam" mat-raised-button color="primary" (click)="applyNow(exam)">Apply Now</button>
           </div>
         </mat-card-content>
 

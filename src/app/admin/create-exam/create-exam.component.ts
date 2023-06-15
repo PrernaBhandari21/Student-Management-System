@@ -13,6 +13,7 @@ export class CreateExamComponent implements OnInit {
   examName : any='';
   eligibilityCriteriaFile!: File;
   otherDetails!: string;
+  format:any;
 
   pdfFile!: File;
   pdfBase64!: string;
@@ -31,14 +32,22 @@ export class CreateExamComponent implements OnInit {
     this.dialogService.openConfirmationDialog('Are you sure you want to Publish?').subscribe(result => {
       if (result) {
         // User clicked "Publish"
+
+
+        const examId = Math.floor(100000 + Math.random() * 900000);
+
  // Prepare form data
  const form = {
+  examId: examId,
   startDate: this.startDate,
   endDate: this.endDate,
   eligibilityCriteriaFile: this.eligibilityCriteriaFile,
   otherDetails: this.otherDetails,
-  examName : this.examName
+  examName : this.examName,
+  format:this.format
 };
+
+console.log("FORM : ",form);
 
 // Send POST request to the server
 fetch('/exam', {

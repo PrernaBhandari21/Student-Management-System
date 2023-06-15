@@ -9,6 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 export class ExamRegistrationComponent implements OnInit {
   examName: any;
   currentStep: number = 1;
+  examFormat : any;
 
   constructor(
     private activatedRoute : ActivatedRoute,
@@ -18,9 +19,12 @@ export class ExamRegistrationComponent implements OnInit {
 
     this.activatedRoute.queryParams.subscribe(params =>{
       this.examName = params["examName"];
+      this.examFormat = params["examFormat"]
+
     })
     // this.examName = "ABC Exam"
     console.log("this.examName =>", this.examName);
+    console.log("this.examFormat =>", this.examFormat);
 
 
 

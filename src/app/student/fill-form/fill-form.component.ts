@@ -11,19 +11,29 @@ import { FormDataService } from 'src/app/form-data.service';
 export class FillFormComponent implements OnInit {
   formGroup!: FormGroup;
   @Input() examName: string | undefined;
+  @Input() examId : string | undefined;
   @Output() submitted: EventEmitter<void> = new EventEmitter<void>();
 
   constructor(
     private formBuilder: FormBuilder,
-    private formService : FormDataService
+    private formService : FormDataService,
+    private route: ActivatedRoute
   ) { }
 
   ngOnInit(): void {
 
+    this.route.queryParams.subscribe(params => {
+      console.log(params); // Check if the examId parameter is present here
+      this.examId = params["examId"];
+      this.examName = params["examName"]
+      console.log(this.examId); // Check if the examId value is assigned correctly
+    });
    
     // this.examName = "ABC Exam"
     console.log("this.examName =>", this.examName);
 
+
+    console.log("this.examId ==========>>>>>", this.examId);
 
 
     const savedFormData = this.formService.getFormData();
@@ -50,40 +60,16 @@ export class FillFormComponent implements OnInit {
     if (this.formGroup.valid) {
       // Handle form submission
 
+      console.log("Exam NAME ", this.examName);
+      console.log("EXAM ID ",this.examId);
 
       //Add examName to form !!
-      this.formGroup.value.examName = this.examName
+      // this.formGroup.value.examName = this.examName
       console.log(this.formGroup.value);
 
       this.formService.saveFormData(this.formGroup.value)
       this.submitted.emit(); // Emit the submitted event
 
-      // fetch('/form', {
-      //   method: 'POST',
-      //   headers: {
-      //     'Content-Type': 'application/json'
-      //   },
-      //   body: JSON.stringify(this.formGroup.value)
-      // })
-      //   .then(response => {
-      //     console.log('Response from server:', response);
-      //     if (response.ok) {
-      //       // Successful operation
-      
-      
-      
-      //         alert("Report Generated Successfully ! Navigate to Existing Reports to view the result.")
-      
-      //     } else {
-      //       // Handle error case
-      //       console.error('Error sending report data to server. Status:', response.status);
-      //       alert('Error sending report data to server. Please try again.');
-      //     }
-      //   })
-      //   .catch(error => {
-      //     console.error('Error sending report data to server:', error);
-      //     alert('Error sending report data to server. Please try again.');
-      //   });
       
     }
   }
