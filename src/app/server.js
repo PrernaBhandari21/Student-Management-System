@@ -337,6 +337,47 @@ app.delete('/api/reportData', async (req, res) => {
 
 
 
+//exam details 
+app.post('/examDetails', async (req, res) => {
+  const data = req.body;
+  console.log("Data received is:", data);
+
+  try {
+    console.log("Inserting data into table:", data);
+
+    const insertQuery = `
+      INSERT INTO examDetails (examId, formDetails)
+      VALUES ($1, $2)
+      ON CONFLICT (examId) DO UPDATE
+      SET formDetails = excluded.formDetails;
+    `;
+    const insertValues = [data.examId, JSON.stringify(data.formDetails)];
+
+    const result = await client.query(insertQuery, insertValues);
+
+    console.log("Data saved to the database:", data);
+    console.log("Result:", result);
+
+    // Send a response indicating successful data submission
+    res.json({ message: 'Form data submitted successfully' });
+  } catch (err) {
+    console.error("Error saving data to the database:", err);
+    res.status(500).json({ error: 'Error submitting form data' });
+  }
+});
+
+app.get('/examDetails', async (req, res) => {
+  try {
+    const query = 'SELECT * FROM examDetails';
+    const result = await client.query(query);
+    const examDetails = result.rows;
+    res.json({ "Existing Exam Details": examDetails });
+  } catch (error) {
+    console.error('Error retrieving Exam Details:', error);
+    res.status(500).json({ message: 'Error retrieving Exam Details', error });
+  }
+});
+
 
 
 const PORT = process.env.PORT || 400;

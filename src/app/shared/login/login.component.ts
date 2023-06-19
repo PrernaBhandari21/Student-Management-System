@@ -99,6 +99,8 @@ export class LoginComponent implements OnInit {
         this.route.navigate(["admin-dashboard"])
       }else if(response.user.role == "student"){
         this.route.navigate(["all-available-exams"])
+      }else if(response.user.role == "approver"){
+        this.route.navigate(["approver-dashboard"])
       }
 
       // You can access the stored user information anywhere in your application

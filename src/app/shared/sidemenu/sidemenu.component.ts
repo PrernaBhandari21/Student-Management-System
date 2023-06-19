@@ -101,6 +101,31 @@ export class SidemenuComponent implements OnInit {
 
 			
 		];
+	}else if(this.storedUser.role == "approver"){
+		this.appitems = [
+			{
+			  label: "Dashboard",
+			  link: "/approver-dashboard",
+			  icon: "pets"
+			}
+			,			
+			{
+				label: "Review Applications for Exams",
+				link: '/exam-details',
+				icon: "group",
+			},
+			,
+			{
+				label:"Logout",
+				// link:"/landing-page",
+				icon:"person",
+				onSelected: () => {
+					this.openLogoutModal();
+				  } 
+			}
+
+			
+		];
 	}
 
 

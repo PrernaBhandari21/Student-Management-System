@@ -59,18 +59,45 @@ export class FillFormComponent implements OnInit {
   onSubmit(): void {
     if (this.formGroup.valid) {
       // Handle form submission
-
+  
       console.log("Exam NAME ", this.examName);
-      console.log("EXAM ID ",this.examId);
-
-      //Add examName to form !!
-      // this.formGroup.value.examName = this.examName
+      console.log("EXAM ID ", this.examId);
+  
+      // Add examName to form
+      this.formGroup.value.examName = this.examName;
       console.log(this.formGroup.value);
-
-      this.formService.saveFormData(this.formGroup.value)
+  
+      // Prepare form data
+      const form = {
+        examId: this.examId,
+        formDetails: this.formGroup.value
+      };
+  
+      console.log("FORM: ", form);
+  
+      // Send POST request to the server
+      fetch('/examDetails', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(form)
+      })
+        .then(response => {
+          if (response.ok) {
+            console.log('Form data submitted successfully');
+            // Handle success case here
+          } else {
+            console.error('Error submitting form data. Status:', response.status);
+            // Handle error case here
+          }
+        })
+        .catch(error => {
+          console.error('Error submitting form data:', error);
+          // Handle error case here
+        });
+  
       this.submitted.emit(); // Emit the submitted event
-
-      
     }
   }
 

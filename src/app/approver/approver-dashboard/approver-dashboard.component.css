@@ -1,0 +1,24 @@
+.container {
+    position: relative;
+  }
+  
+  .background-image {
+    background-image: url('https://img.freepik.com/free-vector/approval-mark-product-advantage-rating-reviews-meeting-requirements_335657-3106.jpg?w=1060&t=st=1686807445~exp=1686808045~hmac=9122943d7048dbf48285a6437b96dabef96773fb4ba830bb2c0b9c43c2b52aae');
+    background-size: cover;
+    background-position: center;
+    height: 88vh;
+    width: 100%;
+    margin-top: 10px;
+  }
+  
+  .button {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 25%;
+    height: 8%;
+    font-size: 20px;
+    font-weight: 500;
+  }
+  

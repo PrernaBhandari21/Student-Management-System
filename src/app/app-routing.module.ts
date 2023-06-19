@@ -12,6 +12,8 @@ import { CreateReportComponent } from './admin/create-report/create-report.compo
 import { ResultCalculationComponent } from './admin/result-calculation/result-calculation.component';
 import { ReportsDashboardComponent } from './admin/reports-dashboard/reports-dashboard.component';
 import { StudentPersonalReportComponent } from './admin/student-personal-report/student-personal-report.component';
+import { ApproverDashboardComponent } from './approver/approver-dashboard/approver-dashboard.component';
+import { ApproverViewExamsComponent } from './approver/approver-view-exams/approver-view-exams.component';
 
 const routes: Routes = [
   {
@@ -70,7 +72,15 @@ const routes: Routes = [
   {
     path:"student-personal-report",
     component:StudentPersonalReportComponent
-  }
+  },
+  {
+    path:"approver-dashboard",
+    component:ApproverDashboardComponent
+  },
+  {
+    path:"exam-details",
+    component:ApproverViewExamsComponent
+  },
 ];
 
 @NgModule({

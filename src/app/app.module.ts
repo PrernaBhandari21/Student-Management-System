@@ -44,6 +44,8 @@ import { StudentPersonalReportComponent } from './admin/student-personal-report/
 import { FillFormComponent } from './student/fill-form/fill-form.component';
 import { PreviewFormComponent } from './student/preview-form/preview-form.component';
 import { FillFormat2Component } from './student/fill-format2/fill-format2.component';
+import { ApproverDashboardComponent } from './approver/approver-dashboard/approver-dashboard.component';
+import { ApproverViewExamsComponent } from './approver/approver-view-exams/approver-view-exams.component';
 
 @NgModule({
   declarations: [
@@ -71,6 +73,8 @@ import { FillFormat2Component } from './student/fill-format2/fill-format2.compon
     FillFormComponent,
     PreviewFormComponent,
     FillFormat2Component,
+    ApproverDashboardComponent,
+    ApproverViewExamsComponent,
   ],
   imports: [
     BrowserModule,

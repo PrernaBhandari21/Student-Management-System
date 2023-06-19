@@ -1,0 +1,39 @@
+<div class="table-container">
+
+    <h3 class="heading">List of Available Exams to Review</h3>
+
+    <table mat-table [dataSource]="dataSource" class="custom-table">
+      <!-- Name Of Examination Column -->
+      <ng-container matColumnDef="nameOfExam">
+        <th mat-header-cell *matHeaderCellDef>Name Of Examination</th>
+        <td mat-cell *matCellDef="let element">{{ element.nameOfExam }}</td>
+      </ng-container>
+
+      <!-- All Column -->
+      <ng-container matColumnDef="all">
+        <th mat-header-cell *matHeaderCellDef>All</th>
+        <td mat-cell *matCellDef="let element">{{ element.all }}</td>
+      </ng-container>
+
+      <!-- Reviewed Column -->
+      <ng-container matColumnDef="reviewed">
+        <th mat-header-cell *matHeaderCellDef>Reviewed</th>
+        <td mat-cell *matCellDef="let element">{{ element.reviewed }}</td>
+      </ng-container>
+
+      <!-- Pending Column -->
+      <ng-container matColumnDef="pending">
+        <th mat-header-cell *matHeaderCellDef>Pending</th>
+        <td mat-cell *matCellDef="let element">{{ element.pending }}</td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+
+    <div *ngIf="dataSource.data.length === 0">
+      <h3 style="text-align:center">
+        Approvers List is not available.
+      </h3>
+    </div>
+  </div>
