@@ -89,18 +89,18 @@
     <div class="documentsDiv">
       <h4>Document Attachments:</h4>
       <div class="docsUploadDiv">
-        <div class="mb-4">
-          <label for="10thCertificate">10th Certificate</label>
+        <div class="mb-4 row-flex">
+          <label for="10thCertificate" style="width: 50%;">10th Certificate</label>
           <input type="file" id="10thCertificate" (change)="onAttachmentChange($event, '10thCertificate')">
           <div *ngIf="formGroup.get('attachments.10thCertificate')?.value">Selected file: {{ formGroup.get('attachments.10thCertificate')?.value.name }}</div>
         </div>
-        <div class="mb-4">
-          <label for="12thCertificate">12th Certificate</label>
+        <div class="mb-4 row-flex">
+          <label for="12thCertificate" style="width: 50%;">12th Certificate</label>
           <input type="file" id="12thCertificate" (change)="onAttachmentChange($event, '12thCertificate')">
           <div *ngIf="formGroup.get('attachments.12thCertificate')?.value">Selected file: {{ formGroup.get('attachments.12thCertificate')?.value.name }}</div>
         </div>
-        <div class="mb-4">
-          <label for="obcCertificate">OBC/SC/ST Certificate</label>
+        <div class="mb-4 row-flex">
+          <label for="obcCertificate" style="width: 50%;">OBC/SC/ST Certificate</label>
           <input type="file" id="obcCertificate" (change)="onAttachmentChange($event, 'categoryCertificate')">
           <div *ngIf="formGroup.get('attachments.categoryCertificate')?.value">Selected file: {{ formGroup.get('attachments.categoryCertificate')?.value.name }}</div>
         </div>

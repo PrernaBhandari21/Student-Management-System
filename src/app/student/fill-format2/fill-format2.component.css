@@ -1,4 +1,4 @@
-.heading {
+/* .heading {
     font-size: 24px;
     font-weight: 500;
     margin: 20px;
@@ -17,7 +17,7 @@
   }
   
   mat-radio-group .mat-radio-button {
-    width: auto; /* Adjust the width as needed */
+    width: auto; 
   }
   
   form {
@@ -44,4 +44,50 @@
     width: auto;
     margin-top: 10px;
   }
-  
+   */
+
+
+   .form__container{
+    margin: 30px;
+    /* background: rgb(245, 244, 242); */
+    padding: 20px;
+    border-radius: 10px;
+    margin-left: 100px;
+    margin-right: 100px;
+    border: 2px solid burlywood;
+   }
+
+   .form-element30{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+   }
+
+   .form-element50{
+    display: flex;
+    flex-direction: column;
+    width: 48%;
+   }
+
+
+   .form-element100{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+   }
+
+
+   .row-flex{
+    display: flex;
+    justify-content: space-between;
+   }
+
+   .documentsDiv{
+    display: flex;
+  }
+
+  .documentsDiv h4{
+    width: 50%;
+    font-size: 16px;
+    font-weight: 500;
+  }
