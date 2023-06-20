@@ -111,7 +111,7 @@ export class SidemenuComponent implements OnInit {
 			,			
 			{
 				label: "Review Applications for Exams",
-				link: '/exam-details',
+				link: '/view-all-exams',
 				icon: "group",
 			},
 			,

@@ -14,6 +14,7 @@ import { ReportsDashboardComponent } from './admin/reports-dashboard/reports-das
 import { StudentPersonalReportComponent } from './admin/student-personal-report/student-personal-report.component';
 import { ApproverDashboardComponent } from './approver/approver-dashboard/approver-dashboard.component';
 import { ApproverViewExamsComponent } from './approver/approver-view-exams/approver-view-exams.component';
+import { ViewExamDetailsComponent } from './approver/view-exam-details/view-exam-details.component';
 
 const routes: Routes = [
   {
@@ -78,9 +79,13 @@ const routes: Routes = [
     component:ApproverDashboardComponent
   },
   {
-    path:"exam-details",
+    path:"view-all-exams",
     component:ApproverViewExamsComponent
   },
+  {
+    path:"view-exam-details",
+    component:ViewExamDetailsComponent
+  }
 ];
 
 @NgModule({

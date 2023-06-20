@@ -1,4 +1,126 @@
-<div class="form-container">
+<div class="form__container">
+  <h3 class="heading">Registration Form for <span>{{examName}}</span></h3>
+
+  <form class="example-form" [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+
+    <div class="row-flex">
+
+      <div class="form-element30">
+        <label>Enter your Name</label>
+        <mat-form-field appearance="outline" >
+          <input matInput placeholder="Name" formControlName="name" required>
+        </mat-form-field>
+      </div>
+  
+  
+      <div style="width: 30%;">
+        <label>Select Your Gender</label>
+        <div>
+          <mat-form-field style="width: 100%;">
+            <mat-label>Gender</mat-label>
+            <mat-select formControlName="gender">
+              <mat-option value="male">Male</mat-option>
+              <mat-option value="female">Female</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="form-element30">
+        <label>Date of Birth</label>
+        <mat-form-field appearance="outline">
+          <input matInput [matDatepicker]="picker" placeholder="Date of Birth" formControlName="dob" required>
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </div>
+  
+    </div>
+
+    <div class="row-flex">
+
+      <div class="form-element50">
+        <label>Enter Father's Name</label>
+        <mat-form-field appearance="outline">
+          <input matInput placeholder="Father's Name" formControlName="fatherName" required>
+        </mat-form-field>
+      </div>
+  
+      <div class="form-element50">
+        <label>Enter Mother's Name</label>
+        <mat-form-field appearance="outline">
+          <input matInput placeholder="Mother's Name" formControlName="motherName" required>
+        </mat-form-field>
+      </div>
+  
+    </div>
+
+
+    <div class="row-flex">
+
+      <div class="form-element50">
+        <label>Enter your Email ID</label>
+        <mat-form-field appearance="outline">
+          <input matInput placeholder="Email" formControlName="email" required>
+        </mat-form-field>
+      </div>
+
+      <div class="form-element50">
+        <label>Post Applied For</label>
+        <mat-form-field appearance="outline">
+          <input matInput placeholder="Post Applied For" formControlName="postAppliedFor" required>
+        </mat-form-field>
+      </div>
+    </div>
+
+
+    <div class="row-flex">
+      <div class="form-element100">
+        <label>Enter Address</label>
+        <mat-form-field appearance="outline">
+          <textarea matInput placeholder="Address" formControlName="address" required></textarea>
+        </mat-form-field>
+      </div>
+    </div>
+
+
+
+
+    <div class="documentsDiv">
+      <h4>Document Attachments:</h4>
+      <div class="docsUploadDiv">
+        <div class="mb-4">
+          <label for="10thCertificate">10th Certificate</label>
+          <input type="file" id="10thCertificate" (change)="onAttachmentChange($event, '10thCertificate')">
+          <div *ngIf="formGroup.get('attachments.10thCertificate')?.value">Selected file: {{ formGroup.get('attachments.10thCertificate')?.value.name }}</div>
+        </div>
+        <div class="mb-4">
+          <label for="12thCertificate">12th Certificate</label>
+          <input type="file" id="12thCertificate" (change)="onAttachmentChange($event, '12thCertificate')">
+          <div *ngIf="formGroup.get('attachments.12thCertificate')?.value">Selected file: {{ formGroup.get('attachments.12thCertificate')?.value.name }}</div>
+        </div>
+        <div class="mb-4">
+          <label for="obcCertificate">OBC/SC/ST Certificate</label>
+          <input type="file" id="obcCertificate" (change)="onAttachmentChange($event, 'categoryCertificate')">
+          <div *ngIf="formGroup.get('attachments.categoryCertificate')?.value">Selected file: {{ formGroup.get('attachments.categoryCertificate')?.value.name }}</div>
+        </div>
+      </div>
+      </div>
+     
+<div style="text-align: center;">
+  <button mat-raised-button color="primary" class="m-3" type="submit">Save Form Details</button>
+
+</div>
+
+
+  </form>
+
+</div>
+
+
+
+
+<!-- <div class="form-container">
   <h3 class="heading">Student Registration Form for <span>{{examName}}</span></h3>
   <form class="example-form" [formGroup]="formGroup" (ngSubmit)="onSubmit()">
     <div class="form-row">
@@ -87,4 +209,4 @@
 
     <button mat-raised-button color="primary" class="m-3" type="submit">Save Form Details</button>
   </form>
-</div>
+</div> -->

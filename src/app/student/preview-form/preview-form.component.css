@@ -1,4 +1,43 @@
+mat-card{
+    margin: 20px;
+    margin-left: 200px;
+    margin-right: 200px;
+}
+
+span{
+    font-size: 17px;
+
+}
+
 .flex-row{
     display: flex;
     justify-content: space-between;
+}
+
+.fieldName{
+    margin: 8px;
+    font-weight: 500;
+}
+
+.inputBox{
+    border: 1px dotted gray;
+    width: 350px;
+    padding: 5px;
+    margin: 8px;
+    border-radius: 5px;
+}
+
+.textareaBox{
+    border: 1px dotted gray;
+    width: 350px;
+    height: 150px;
+    padding: 5px;
+    margin: 8px;
+    overflow: auto;
+    border-radius: 5px;
+
+}
+
+.flex-row:hover{
+    background-color: beige;
 }

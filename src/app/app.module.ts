@@ -46,6 +46,7 @@ import { PreviewFormComponent } from './student/preview-form/preview-form.compon
 import { FillFormat2Component } from './student/fill-format2/fill-format2.component';
 import { ApproverDashboardComponent } from './approver/approver-dashboard/approver-dashboard.component';
 import { ApproverViewExamsComponent } from './approver/approver-view-exams/approver-view-exams.component';
+import { ViewExamDetailsComponent } from './approver/view-exam-details/view-exam-details.component';
 
 @NgModule({
   declarations: [
@@ -75,6 +76,7 @@ import { ApproverViewExamsComponent } from './approver/approver-view-exams/appro
     FillFormat2Component,
     ApproverDashboardComponent,
     ApproverViewExamsComponent,
+    ViewExamDetailsComponent,
   ],
   imports: [
     BrowserModule,

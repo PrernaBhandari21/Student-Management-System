@@ -15,6 +15,7 @@
   
   
   <div class="step-content">
+
     <!-- <div *ngIf="currentStep === 1">
       <div *ngIf="examFormat == 'Format1'">
         <app-fill-form [examName]="examName" (submitted)="selectStep(2)"></app-fill-form>
@@ -22,24 +23,19 @@
       <div *ngIf="examFormat == 'Format2'">
         <app-fill-format2 [examName]="examName" (submitted)="selectStep(2)"></app-fill-format2>
       </div>
-    </div> -->
-  
-    <div *ngIf="currentStep === 1">
-      <!-- <div *ngIf="examFormat == 'Format1'"> -->
-        <!-- <app-fill-form [examName]="examName" ></app-fill-form> -->
-      <!-- </div> -->
-      <!-- <div *ngIf="examFormat == 'Format2'"> -->
-        <app-fill-format2 [examName]="examName" ></app-fill-format2>
-      <!-- </div> -->
     </div>
+   -->
+
+   <app-fill-form></app-fill-form>
+   
   
     <!-- <div *ngIf="currentStep === 2">
       <app-preview-form></app-preview-form>
     </div>
   
-    <div *ngIf="currentStep === 3">Third</div> -->
+    <div *ngIf="currentStep === 3">Third</div>
   
-  </div>
+  </div> -->
   
 </div>
 

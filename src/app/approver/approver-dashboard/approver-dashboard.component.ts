@@ -17,6 +17,6 @@ export class ApproverDashboardComponent implements OnInit {
 
 
   navigateToViewExams(){
-    this.route.navigate(["exam-details"]);
+    this.route.navigate(["view-all-exams"]);
   }
 }
