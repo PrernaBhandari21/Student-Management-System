@@ -47,6 +47,7 @@ import { FillFormat2Component } from './student/fill-format2/fill-format2.compon
 import { ApproverDashboardComponent } from './approver/approver-dashboard/approver-dashboard.component';
 import { ApproverViewExamsComponent } from './approver/approver-view-exams/approver-view-exams.component';
 import { ViewExamDetailsComponent } from './approver/view-exam-details/view-exam-details.component';
+import { PreviewForm2Component } from './student/preview-form2/preview-form2.component';
 
 @NgModule({
   declarations: [
@@ -77,6 +78,7 @@ import { ViewExamDetailsComponent } from './approver/view-exam-details/view-exam
     ApproverDashboardComponent,
     ApproverViewExamsComponent,
     ViewExamDetailsComponent,
+    PreviewForm2Component,
   ],
   imports: [
     BrowserModule,

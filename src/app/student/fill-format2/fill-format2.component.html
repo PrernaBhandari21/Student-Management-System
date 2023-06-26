@@ -91,9 +91,9 @@
 
       <div class="form-element50">
         <label>Select Department</label>
-        <mat-form-field appearance="outline">
+        <mat-form-field appearance="outline" >
           <mat-label>Select Department:</mat-label>
-          <select matNativeControl id="department" formControlName="department" required>
+          <select matNativeControl id="department" formControlName="department" required > 
             <option value="">Select Department</option>
             <option value="Oral Medicine & Radiology">Oral Medicine & Radiology</option>
             <option value="Oral & Maxillofacial Surgery">Oral & Maxillofacial Surgery</option>
@@ -110,38 +110,139 @@
       </div>
 
       <div class="form-element50">
-        <label>Contact No.</label>
-        <mat-form-field>
-          <input matInput placeholder="Contact Number" type="number" formControlName="contactNo" required>
+
+
+        <label>Select Category</label>
+        <mat-form-field appearance="outline" >
+          <mat-label>Category:</mat-label>
+          <select matNativeControl id="category" formControlName="category" required>
+            <option value="">Select Category</option>
+            <option value="Un-reserved">Un-reserved</option>
+            <option value="Scheduled Caste">Scheduled Caste</option>
+            <option value="Scheduled Tribe">Scheduled Tribe</option>
+            <option value="Other Backward Class">Other Backward Class</option>
+            <option value="Economically Weaker Section">Economically Weaker Section</option>
+          </select>
         </mat-form-field>
+
+
+
+      
       </div>
 
     </div>
 
+    <div *ngIf="formGroup.get('category')?.value !== 'Un-reserved'">
 
 
+      <div class="row-flex">
+
+        <div class="form-element50">
 
 
-    <div class="documentsDiv">
-      <h4>Document Attachments:</h4>
-      <div class="docsUploadDiv">
-        <div class="mb-4 row-flex">
-          <label for="10thCertificate" style="width: 50%;">10th Certificate</label>
-          <input type="file" id="10thCertificate" (change)="onAttachmentChange($event, '10thCertificate')">
-          <div *ngIf="formGroup.get('attachments.10thCertificate')?.value">Selected file: {{ formGroup.get('attachments.10thCertificate')?.value.name }}</div>
-        </div>
-        <div class="mb-4 row-flex">
-          <label for="12thCertificate" style="width: 50%;">12th Certificate</label>
-          <input type="file" id="12thCertificate" (change)="onAttachmentChange($event, '12thCertificate')">
-          <div *ngIf="formGroup.get('attachments.12thCertificate')?.value">Selected file: {{ formGroup.get('attachments.12thCertificate')?.value.name }}</div>
-        </div>
-        <div class="mb-4 row-flex">
-          <label for="obcCertificate" style="width: 50%;">OBC/SC/ST Certificate</label>
-          <input type="file" id="obcCertificate" (change)="onAttachmentChange($event, 'categoryCertificate')">
-          <div *ngIf="formGroup.get('attachments.categoryCertificate')?.value">Selected file: {{ formGroup.get('attachments.categoryCertificate')?.value.name }}</div>
-        </div>
+      <mat-form-field class="form-group">
+        <mat-label>Name of the state from where the category certificate has been issued:</mat-label>
+        <select matNativeControl id="state" formControlName="state">
+          <option value="">Select State</option>
+        </select>
+      </mat-form-field>
+
       </div>
+
+      <div class="form-element50">
+
+
+      <mat-form-field class="form-group">
+        <mat-label>Name/Designation of the Issuing authority:</mat-label>
+        <input matInput type="text" id="issuingAuthority" formControlName="issuingAuthority">
+      </mat-form-field>
+
       </div>
+        </div>
+
+        <div class="row-flex">
+
+          <div class="form-element50">
+
+          <mat-form-field class="form-group">
+            <mat-label>Registration No. and Date of Category Certificate:</mat-label>
+            <input matInput type="text" id="registrationNo" formControlName="registrationNo">
+          </mat-form-field>
+          </div>
+
+          <div class="form-element50">
+        <div class="form-group">
+          <label>Whether belongs to PwD category:</label>
+          <div class="form-check">
+            <mat-radio-group formControlName="pwdCategory">
+              <mat-radio-button value="Yes">Yes</mat-radio-button>
+              <mat-radio-button value="No">No</mat-radio-button>
+            </mat-radio-group>
+          </div>
+        </div>
+        </div>
+
+      </div>
+        </div>
+
+
+
+
+
+
+      <div class="documentsDiv mt-4">
+        <h4>Document Attachments:</h4>
+        <div class="docsUploadDiv">
+          <div class="mb-4">
+            <label for="AgeProof">Age Proof</label>
+            <input type="file" id="AgeProof" (change)="onAttachmentChange($event, 'AgeProof')">
+            <div *ngIf="formGroup.get('attachments.AgeProof')?.value">Selected file: {{ formGroup.get('attachments.AgeProof')?.value.name }}</div>
+          </div>
+          <div class="mb-4">
+            <label for="categoryCertificate">Category Certificate</label>
+            <input type="file" id="categoryCertificate" (change)="onAttachmentChange($event, 'categoryCertificate')">
+            <div *ngIf="formGroup.get('attachments.categoryCertificate')?.value">Selected file: {{ formGroup.get('attachments.categoryCertificate')?.value.name }}</div>
+          </div>
+          <div class="mb-4">
+            <label for="BDS_Degree_with_all_marksheets">BDS Degree with all marksheets</label>
+            <input type="file" id="BDS_Degree_with_all_marksheets" (change)="onAttachmentChange($event, 'BDS_Degree_with_all_marksheets')">
+            <div *ngIf="formGroup.get('attachments.BDS_Degree_with_all_marksheets')?.value">Selected file: {{ formGroup.get('attachments.BDS_Degree_with_all_marksheets')?.value.name }}</div>
+          </div>
+          <div class="mb-4">
+            <label for="Internship_Completion_Certificate">Internship Completion Certificate</label>
+            <input type="file" id="Internship_Completion_Certificate" (change)="onAttachmentChange($event, 'Internship_Completion_Certificate')">
+            <div *ngIf="formGroup.get('attachments.Internship_Completion_Certificate')?.value">Selected file: {{ formGroup.get('attachments.Internship_Completion_Certificate')?.value.name }}</div>
+          </div>
+          <div class="mb-4">
+            <label for="MDS_Degree_or_Provisional_Certificate">MDS Degree / Provisional Certificate</label>
+            <input type="file" id="MDS_Degree_or_Provisional_Certificate" (change)="onAttachmentChange($event, 'MDS_Degree_or_Provisional_Certificate')">
+            <div *ngIf="formGroup.get('attachments.MDS_Degree_or_Provisional_Certificate')?.value">Selected file: {{ formGroup.get('attachments.MDS_Degree_or_Provisional_Certificate')?.value.name }}</div>
+          </div>
+          <div class="mb-4">
+            <label for="Valid_State_Dental_Council_Reg_Certificate">Valid State Dental Council Registration Certificate</label>
+            <input type="file" id="Valid_State_Dental_Council_Reg_Certificate" (change)="onAttachmentChange($event, 'Valid_State_Dental_Council_Reg_Certificate')">
+            <div *ngIf="formGroup.get('attachments.Valid_State_Dental_Council_Reg_Certificate')?.value">Selected file: {{ formGroup.get('attachments.Valid_State_Dental_Council_Reg_Certificate')?.value.name }}</div>
+          </div>
+          <div class="mb-4">
+            <label for="Experience_Certificate">Experience Certificate (if any)</label>
+            <input type="file" id="Experience_Certificate" (change)="onAttachmentChange($event, 'Experience_Certificate')">
+            <div *ngIf="formGroup.get('attachments.Experience_Certificate')?.value">Selected file: {{ formGroup.get('attachments.Experience_Certificate')?.value.name }}</div>
+          </div>
+          <div class="mb-4">
+            <label for="PassportSizePhoto">Passport Size Photo</label>
+            <input type="file" id="PassportSizePhoto" (change)="onAttachmentChange($event, 'PassportSizePhoto')">
+            <div *ngIf="formGroup.get('attachments.PassportSizePhoto')?.value">Selected file: {{ formGroup.get('attachments.PassportSizePhoto')?.value.name }}</div>
+          </div>
+          <div class="mb-4">
+            <label for="Signature_of_candidate">Signature of candidate</label>
+            <input type="file" id="Signature_of_candidate" (change)="onAttachmentChange($event, 'Signature_of_candidate')">
+            <div *ngIf="formGroup.get('attachments.Signature_of_candidate')?.value">Selected file: {{ formGroup.get('attachments.Signature_of_candidate')?.value.name }}</div>
+          </div>
+        </div>
+       
+      </div>
+
+
      
 <div style="text-align: center;">
   <button mat-raised-button color="primary" class="m-3" type="submit">Save Form Details</button>
@@ -193,34 +294,7 @@
       </select>
     </mat-form-field>
 
-    <div *ngIf="formGroup.get('category')?.value !== 'Un-reserved'">
-      <mat-form-field class="form-group">
-        <mat-label>Name of the state from where the category certificate has been issued:</mat-label>
-        <select matNativeControl id="state" formControlName="state">
-          <option value="">Select State</option>
-        </select>
-      </mat-form-field>
 
-      <mat-form-field class="form-group">
-        <mat-label>Name/Designation of the Issuing authority:</mat-label>
-        <input matInput type="text" id="issuingAuthority" formControlName="issuingAuthority">
-      </mat-form-field>
-
-      <mat-form-field class="form-group">
-        <mat-label>Registration No. and Date of Category Certificate:</mat-label>
-        <input matInput type="text" id="registrationNo" formControlName="registrationNo">
-      </mat-form-field>
-    </div>
-
-    <div class="form-group">
-      <label>Whether belongs to PwD category:</label>
-      <div class="form-check">
-        <mat-radio-group formControlName="pwdCategory">
-          <mat-radio-button value="Yes">Yes</mat-radio-button>
-          <mat-radio-button value="No">No</mat-radio-button>
-        </mat-radio-group>
-      </div>
-    </div>
 
 
   

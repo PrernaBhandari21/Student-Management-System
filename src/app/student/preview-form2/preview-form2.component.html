@@ -1,0 +1,147 @@
+<mat-card>
+    <h2 class="heading">Preview Form 2 Details</h2>
+
+    <mat-card-content>
+        <div class="flex-row">
+            <span class="fieldName">Exam Name</span>
+            <!-- <span>{{ formData.examName }}</span> -->
+            <span class="inputBox">Exam 1</span>
+        </div>
+
+        <div class="flex-row">
+            <span class="fieldName">Applicant Name</span>
+            <!-- <span>{{ formData.applicantName }}</span> -->
+            <span class="inputBox">Kalki Jha</span>
+        </div>
+
+        <div class="flex-row">
+            <span class="fieldName">Gender</span>
+            <!-- <span>{{ formData.gender }}</span> -->
+            <span class="inputBox">Female</span>
+
+        </div>
+
+        <div class="flex-row">
+            <span class="fieldName">Date of Birth</span>
+            <!-- <span>{{ formData.dob | date }}</span> -->
+            <span class="inputBox">11-11-1990</span>
+        </div>
+
+        <div class="flex-row">
+            <span class="fieldName">Category</span>
+            <!-- <span>{{ formData.category }}</span> -->
+            <span class="inputBox">General</span>
+        </div>
+
+        <div class="flex-row">
+            <span class="fieldName">Father's Name</span>
+            <!-- <span>{{ formData.fatherName }}</span> -->
+            <span class="textareaBox">Rajiv Jha</span>
+        </div>
+
+        <div class="flex-row">
+            <span class="fieldName">Mother's Name</span>
+            <!-- <span>{{ formData.motherName }}</span> -->
+            <span class="inputBox">ABC</span>
+        </div>
+
+        <div class="flex-row">
+            <span class="fieldName">Address</span>
+            <!-- <span>{{ formData.address }}</span> -->
+            <span class="textareaBox">123 Flat, East-Delhi, 110091</span>
+        </div>
+
+        <div class="flex-row">
+            <span class="fieldName">State</span>
+            <!-- <span>{{ formData.state }}</span> -->
+            <span class="inputBox">Delhi</span>
+
+        </div>
+
+        <div class="flex-row">
+            <span class="fieldName">Issuing Authority</span>
+            <!-- <span>{{ formData.issuingAuthority}}</span> -->
+            <span class="inputBox">ABC</span>
+        </div>
+
+        <div class="flex-row">
+            <span class="fieldName">Registration No.</span>
+            <!-- <span>{{ formData.registrationNo}}</span> -->
+            <span class="inputBox">AB78JHG00864</span>
+        </div>
+
+        <div class="flex-row">
+            <span class="fieldName">PWD Category</span>
+            <!-- <span>{{ formData.pwdCategory}}</span> -->
+            <span class="inputBox">No</span>
+        </div>
+
+        <!-- <div class="flex-row">
+            <span class="fieldName">degrees</span>
+            <span class="inputBox">ABC</span>
+        </div> -->
+
+        <div class="flex-row">
+            <span class="fieldName">10th Certificate</span>
+            <span>{{ formData.attachments['10thCertificate'].name }}</span>
+        </div>
+
+        <div class="flex-row">
+            <span class="fieldName">12th Certificate</span>
+            <span>{{ formData.attachments['12thCertificate'].name }}</span>
+        </div>
+
+        <div class="flex-row">
+            <span class="fieldName">OBC/SC/ST Certificate</span>
+            <span>{{ formData.attachments.categoryCertificate.name }}</span>
+        </div>
+
+        <div class="flex-row">
+            <span class="fieldName">Age Proof</span>
+            <span>{{ formData.attachments['AgeProof'].name }}</span>
+        </div>
+
+        <div class="flex-row">
+            <span class="fieldName">Category Certificate</span>
+            <span>{{ formData.attachments['categoryCertificate'].name }}</span>
+        </div>
+
+        <div class="flex-row">
+            <span class="fieldName">BDS Degree (with all marksheets) </span>
+            <span>{{ formData.attachments.BDS_Degree_with_all_marksheets.name }}</span>
+        </div>
+
+        <div class="flex-row">
+            <span class="fieldName">Internship Completion Certificate</span>
+            <span>{{ formData.attachments['Internship_Completion_Certificate'].name }}</span>
+        </div>
+
+        <div class="flex-row">
+            <span class="fieldName">MDS Degree or Provisional Certificate</span>
+            <span>{{ formData.attachments['MDS_Degree_or_Provisional_Certificate'].name }}</span>
+        </div>
+
+        <div class="flex-row">
+            <span class="fieldName">Valid State Dental Council Registration Certificate</span>
+            <span>{{ formData.attachments.Valid_State_Dental_Council_Reg_Certificate.name }}</span>
+        </div>
+
+        <div class="flex-row">
+            <span class="fieldName">Experience Certificate</span>
+            <span>{{ formData.attachments.Experience_Certificate.name }}</span>
+        </div>
+
+        <div class="flex-row">
+            <span class="fieldName">Passport Size Photo</span>
+            <span>{{ formData.attachments.PassportSizePhoto.name }}</span>
+        </div>
+
+        <div class="flex-row">
+            <span class="fieldName">Candidate's Signature</span>
+            <span>{{ formData.attachments.Signature_of_candidate.name }}</span>
+        </div>
+        
+
+    </mat-card-content>
+  </mat-card>
+  

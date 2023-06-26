@@ -35,6 +35,9 @@ export class AuthComponent implements OnInit {
       const postData = { name, email, password, role };
       console.log(postData);
 
+            // fetch('http://localhost:4000/auth',{
+
+
       fetch('/auth', {
         method: 'POST',
         headers: {

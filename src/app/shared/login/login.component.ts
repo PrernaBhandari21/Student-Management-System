@@ -85,6 +85,9 @@ export class LoginComponent implements OnInit {
 
       // else throw error, alert that password is wrong !
 
+            // const url = `http://localhost:4000/auth?email=${email}&password=${password}`;
+
+
       const url = `/auth?email=${email}&password=${password}`;
       this.http.get(url).subscribe(
         (response: any) => {
