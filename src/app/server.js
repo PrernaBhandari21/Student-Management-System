@@ -380,7 +380,7 @@ app.get('/examDetails', async (req, res) => {
 
 
 
-const PORT = process.env.PORT || 400;
+const PORT = process.env.PORT || 4200;
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);

@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { FormDataService } from 'src/app/form-data.service';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { jsPDF } from 'jspdf';
@@ -12,6 +12,7 @@ import html2canvas from 'html2canvas';
 export class PreviewFormComponent implements OnInit {
   formData: any;
   @ViewChild('formContent', { static: false }) formContent!: ElementRef;
+  @ViewChildren('container', { read: ElementRef }) containerElements!: QueryList<ElementRef>;
 
   constructor(
     private formService : FormDataService,
@@ -71,6 +72,16 @@ export class PreviewFormComponent implements OnInit {
       });
     }
   }
+
+  generateCombinedPDF() {
+    const iframes = this.containerElements.toArray().map((elementRef: { nativeElement: { querySelector: (arg0: string) => any; }; }) => elementRef.nativeElement.querySelector('.iFrame'));
+    const iframeSrcList = iframes.map((iframe: { src: any; }) => iframe.src);
+    console.log(iframeSrcList);
+  }
+  
+  
+  
+  
   
   
 

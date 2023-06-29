@@ -1,11 +1,15 @@
 <div class="downloadBtn ">
     <button class="btn btn-primary" (click)="generatePDF()">Download PDF</button>
+    <button (click)="generateCombinedPDF()">Generate Combined PDF</button>
+
 </div>
 
-<div id="pdfContent">
+
+
 
 <mat-card >
-    <h2 class="heading">Preview Form Details</h2>
+    <div id="pdfContent">
+    <h2 class="heading">Form Preview</h2>
 
     <mat-card-content>
         <div class="flex-row">
@@ -54,14 +58,12 @@
 
         <div class="flex-row">
             <span class="fieldName">Gender</span>
-            <!-- <span>{{ formData.gender }}</span> -->
             <span class="inputBox">Female</span>
 
         </div>
 
         <div class="flex-row">
             <span class="fieldName">Date of Birth</span>
-            <!-- <span>{{ formData.dob | date }}</span> -->
             <span class="inputBox">12-05-1998</span>
         </div>
 
@@ -70,6 +72,19 @@
             <span>{{ formData.attachments['10thCertificate'].name }}</span>
         </div> -->
 
+       
+
+
+        
+
+    </mat-card-content>
+
+</div>
+
+
+
+
+    <div class="allDocuments" #container>
         <h3 class="documents">Document Attachments </h3>
 
         <div class="mt-4">
@@ -92,10 +107,7 @@
             <div class="pdfPreview">
                 <iframe class="iFrame" [src]="getPdfUrl(formData.attachments['10thCertificate'])" frameborder="0"></iframe>
             </div>
-          </div>
-
-
-         
+          </div>             
         
         <div class="mt-4">
             <div class="flex-row">
@@ -107,10 +119,7 @@
                 <iframe class="iFrame" [src]="getPdfUrl(formData.attachments['10thCertificate'])" frameborder="0"></iframe>
             </div>
         </div>
-        
-
-    </mat-card-content>
+    </div>
   </mat-card>
 
-  </div>
   
