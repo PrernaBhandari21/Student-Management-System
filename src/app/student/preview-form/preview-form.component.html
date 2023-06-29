@@ -1,4 +1,10 @@
-  <mat-card>
+<div class="downloadBtn ">
+    <button class="btn btn-primary" (click)="generatePDF()">Download PDF</button>
+</div>
+
+<div id="pdfContent">
+
+<mat-card >
     <h2 class="heading">Preview Form Details</h2>
 
     <mat-card-content>
@@ -59,21 +65,52 @@
             <span class="inputBox">12-05-1998</span>
         </div>
 
-        <div class="flex-row">
+        <!-- <div class="flex-row">
             <span class="fieldName">10th Certificate</span>
             <span>{{ formData.attachments['10thCertificate'].name }}</span>
-        </div>
+        </div> -->
 
-        <div class="flex-row">
-            <span class="fieldName">12th Certificate</span>
-            <span>{{ formData.attachments['12thCertificate'].name }}</span>
-        </div>
+        <h3 class="documents">Document Attachments </h3>
 
-        <div class="flex-row">
-            <span class="fieldName">OBC/SC/ST Certificate</span>
-            <span>{{ formData.attachments.categoryCertificate.name }}</span>
+        <div class="mt-4">
+            <div class="flex-row">
+                <span class="fieldName">10th Certificate</span>
+                <span>{{ formData.attachments['10thCertificate']?.name }}</span>
+            </div>
+           
+            <div class="pdfPreview">
+                <iframe class="iFrame" [src]="getPdfUrl(formData.attachments['10thCertificate'])" frameborder="0"></iframe>
+            </div>
+          </div>
+
+          <div class="mt-4">
+            <div class="flex-row">
+                <span class="fieldName">12th Certificate</span>
+                <span>{{ formData.attachments['12thCertificate']?.name }}</span>
+            </div>
+
+            <div class="pdfPreview">
+                <iframe class="iFrame" [src]="getPdfUrl(formData.attachments['10thCertificate'])" frameborder="0"></iframe>
+            </div>
+          </div>
+
+
+         
+        
+        <div class="mt-4">
+            <div class="flex-row">
+                <span class="fieldName">OBC/SC/ST Certificate</span>
+                <span>{{ formData.attachments.categoryCertificate?.name }}</span>
+            </div>
+
+            <div class="pdfPreview">
+                <iframe class="iFrame" [src]="getPdfUrl(formData.attachments['10thCertificate'])" frameborder="0"></iframe>
+            </div>
         </div>
+        
 
     </mat-card-content>
   </mat-card>
+
+  </div>
   

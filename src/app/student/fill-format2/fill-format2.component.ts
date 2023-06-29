@@ -9,7 +9,7 @@ import { FormDataService } from 'src/app/form-data.service';
 })
 export class FillFormat2Component implements OnInit {
   formGroup!: FormGroup;
-  degreeColumns: string[] = ['degree', 'university', 'year', 'marksObtained', 'totalMarks', 'action'];
+  degreeColumns = ['degree', 'university', 'year', 'marksObtained', 'totalMarks', 'action'];
   @Input() examName: string | undefined;
   @Output() submitted: EventEmitter<void> = new EventEmitter<void>();
 
@@ -34,11 +34,12 @@ ngOnInit(): void {
       motherName: [savedFormData.motherName || '', Validators.required],
       address: [savedFormData.address || '', Validators.required],
       contactNo:[savedFormData.contactNo || '', Validators.required],
+      email: [savedFormData.email || '', Validators.required],
       state: [''],
       issuingAuthority: [''],
       registrationNo: [''],
       pwdCategory: [''],
-      degrees: this.formBuilder.array([]),
+      // degrees: this.formBuilder.array([]),
       attachments: this.formBuilder.group({
         'AgeProof': [savedFormData.attachments?.['AgeProof'] || ''],
         'categoryCertificate': [savedFormData.attachments?.['categoryCertificate'] || ''],
@@ -57,7 +58,6 @@ ngOnInit(): void {
   get degrees(): FormArray {
     return this.formGroup.get('degrees') as FormArray;
   }
-
   onSubmit(): void {
     if (this.formGroup.valid) {
       // Handle form submission
@@ -84,21 +84,20 @@ ngOnInit(): void {
     }
   }
 
-  addDegree() {
-    const degreeGroup = this.formBuilder.group({
-      name: [''],
-      university: [''],
-      year: [''],
-      marksObtained: [''],
-      totalMarks: [''],
-    });
-  
-    this.degrees.push(degreeGroup);
-  }
-  
+  // addBlankRow() {
+  //   const degreeFormGroup = this.formBuilder.group({
+  //     degree: ['', Validators.required],
+  //     university: ['', Validators.required],
+  //     year: ['', Validators.required],
+  //     marksObtained: ['', Validators.required],
+  //     totalMarks: ['', Validators.required]
+  //   });
 
-  removeDegree(index: number) {
-    const degrees = this.formGroup.get('degrees') as FormArray;
-    degrees.removeAt(index);
-  }
+  //   this.degrees.push(degreeFormGroup);
+  // }
+
+  // removeDegree(index: number) {
+  //   this.degrees.removeAt(index);
+  // }
+  
 }

@@ -15,6 +15,7 @@ import { StudentPersonalReportComponent } from './admin/student-personal-report/
 import { ApproverDashboardComponent } from './approver/approver-dashboard/approver-dashboard.component';
 import { ApproverViewExamsComponent } from './approver/approver-view-exams/approver-view-exams.component';
 import { ViewExamDetailsComponent } from './approver/view-exam-details/view-exam-details.component';
+import { PreviewFormComponent } from './student/preview-form/preview-form.component';
 
 const routes: Routes = [
   {
@@ -85,6 +86,10 @@ const routes: Routes = [
   {
     path:"view-exam-details",
     component:ViewExamDetailsComponent
+  },
+  {
+    path:"preview-form",
+    component:PreviewFormComponent
   }
 ];
 

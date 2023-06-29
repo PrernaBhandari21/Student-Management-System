@@ -8,7 +8,7 @@
       <div class="form-element30">
         <label>Name of Applicant</label>
         <mat-form-field appearance="outline" >
-          <input matInput placeholder="Name" formControlName="name" required>
+          <input matInput placeholder="Name" formControlName="applicantName" required>
         </mat-form-field>
       </div>
   
@@ -186,7 +186,43 @@
         </div>
 
 
-
+        <!-- <div>
+          <h4>Degrees:</h4>
+          <table mat-table [dataSource]="degrees.controls" class="mat-elevation-z8">
+            <ng-container *ngFor="let column of degreeColumns; let i = index" [matColumnDef]="column">
+              <th mat-header-cell *matHeaderCellDef>{{ column }}</th>
+              <td mat-cell *matCellDef="let control">
+                <mat-form-field>
+                  <input matInput [formControl]="control.get(column)" required>
+                </mat-form-field>
+              </td>
+            </ng-container>
+        
+            <ng-container matColumnDef="delete">
+              <th mat-header-cell *matHeaderCellDef></th>
+              <td mat-cell *matCellDef="let control; let i = index">
+                <button mat-icon-button color="warn" (click)="removeDegree(i)">
+                  <mat-icon>delete</mat-icon>
+                </button>
+              </td>
+            </ng-container>
+        
+            <ng-container matColumnDef="blankRow">
+              <td mat-cell *matCellDef="let control; let i = index" [colSpan]="degreeColumns.length + 1" class="blank-row-cell">
+                <button mat-raised-button color="primary" (click)="addBlankRow()">Add Data</button>
+              </td>
+            </ng-container>
+        
+            <tr mat-header-row *matHeaderRowDef="degreeColumns"></tr>
+            <tr mat-row *matRowDef="let control; columns: degreeColumns"></tr>
+            <tr mat-row *matRowDef="let control; columns: ['blankRow']" class="blank-row"></tr>
+            <tr mat-footer-row *matFooterRowDef="['delete']"></tr>
+          </table>
+        </div> -->
+        
+        
+        
+        
 
 
 

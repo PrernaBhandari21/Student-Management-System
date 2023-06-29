@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-view-exam-details',
@@ -17,9 +18,13 @@ export class ViewExamDetailsComponent implements OnInit {
 
   displayedColumns: string[] = ['studentName', 'email', 'gender', 'dateOfBirth', 'view'];
 
-  constructor() { }
+  constructor(private router : Router) { }
 
   ngOnInit(): void {
+  }
+
+  previewForm(){
+    this.router.navigate(["preview-form"])
   }
 
 }

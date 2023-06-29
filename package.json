@@ -23,6 +23,7 @@
     "apexcharts": "^3.40.0",
     "crypto-js": "^4.1.1",
     "html2canvas": "^1.4.1",
+    "html2pdf.js": "^0.10.1",
     "jspdf": "^2.5.1",
     "jspdf-autotable": "^3.5.29",
     "ng-material-multilevel-menu": "^5.5.3",
